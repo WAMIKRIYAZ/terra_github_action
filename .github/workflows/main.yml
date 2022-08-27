@@ -1,0 +1,20 @@
+name: "Terraform Github Actions"
+on:
+  push:
+      branches-ignore:
+        -master
+
+jobs:
+  terraform:
+     name: "Terraform Init"
+     runs-on: ubuntu-latest
+     steps:
+       - name: "Checkout" 
+         uses: actions/checkout@master
+       - name: "Terraform initialization" 
+         uses:   hashicorp/setup-terraform@v2
+         with:
+             terraform_version: 1.1.7
+             tf_actions_subcommand: "init"  
+         env:
+           GITHUB_TOKEN: ${{secrets. GITHUB_TOKEN:}}       
