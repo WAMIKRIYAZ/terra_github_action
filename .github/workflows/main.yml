@@ -1,7 +1,6 @@
 name :CI for terraform
 
-env:
-  Message: 
+
 
 
 on: 
