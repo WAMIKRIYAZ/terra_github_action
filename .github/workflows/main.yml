@@ -1,9 +1,9 @@
-name :CI for terraform
+name: CI for terraform
 
 
 
 
-on: 
+on:
   push:
     branches: ["main", "master"]
   pull_request: 
